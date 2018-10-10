@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Lab3</string>
+    <string-array name="colors_array">
+        <item>white</item>
+        <item>red</item>
+        <item>blue</item>
+        <item>green</item>
+        <item>gray</item>
+        <item>cyan</item>
+        <item>magenta</item>
+        <item>yellow</item>
+        <item>maroon</item>
+        <item>olive</item>
+        <item>silver</item>
+        <item>teal</item>
+    </string-array>
 </resources>

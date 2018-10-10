@@ -1,6 +1,7 @@
 package edu.temple.lab3;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +11,6 @@ import android.widget.TextView;
 
 public class PaletteActivity extends AppCompatActivity {
 
-    static final String[] COLORS = new String[]{"white", "red", "blue", "green", "gray", "cyan",
-            "magenta", "yellow", "maroon", "olive", "silver", "teal"};
     static boolean isIntentional = false;
 
     Spinner spinner;
@@ -22,8 +21,10 @@ public class PaletteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_palette);
         setTitle("Palette Activity");
 
+        Resources res = getResources();
+        String[] colors = res.getStringArray(R.array.colors_array);
         spinner = findViewById(R.id.spinner);
-        spinner.setAdapter(new ColorAdapter(this, COLORS));
+        spinner.setAdapter(new ColorAdapter(this, colors));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
