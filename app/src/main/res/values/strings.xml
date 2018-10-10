@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Lab3</string>
+    <string name="app_name">Lab 3</string>
+    <string name="activity_palette_name">Palette Activity</string>
+    <string name="activity_canvas_name">Canvas Activity</string>
     <string-array name="colors_array">
         <item>white</item>
         <item>red</item>

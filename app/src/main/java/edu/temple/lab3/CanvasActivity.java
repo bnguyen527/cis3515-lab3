@@ -14,7 +14,7 @@ public class CanvasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
-        setTitle("Canvas Activity");
+        setTitle(R.string.activity_canvas_name);
 
         constraintLayout = findViewById(R.id.constraintLayout);
 
