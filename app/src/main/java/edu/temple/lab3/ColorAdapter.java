@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
 
+    static final int[] COLORS = new int[]{
+            Color.WHITE, Color.RED, Color.BLUE, Color.GREEN,
+            Color.GRAY, Color.CYAN, Color.MAGENTA, Color.YELLOW
+    };
+
     private Context context;
     private String[] colors;
 
@@ -37,7 +42,7 @@ public class ColorAdapter extends BaseAdapter {
         TextView colorView = new TextView(context);
         colorView.setText(colors[position]);
         colorView.setTextSize(32);
-        colorView.setBackgroundColor(Color.parseColor(colors[position]));
+        colorView.setBackgroundColor(COLORS[position]);
         return colorView;
     }
 }

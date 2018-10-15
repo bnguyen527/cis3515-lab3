@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 public class PaletteActivity extends AppCompatActivity {
 
@@ -30,7 +29,7 @@ public class PaletteActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (isIntentional) {
                     Intent startCanvasActivity = new Intent(PaletteActivity.this, CanvasActivity.class);
-                    startCanvasActivity.putExtra("color", ((TextView) view).getText());
+                    startCanvasActivity.putExtra("position", position);
                     startActivity(startCanvasActivity);
                 } else {
                     isIntentional = true;
