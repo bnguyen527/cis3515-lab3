@@ -2,6 +2,8 @@ package edu.temple.lab3;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +12,7 @@ import android.widget.Spinner;
 
 public class PaletteActivity extends AppCompatActivity {
 
-    static boolean isIntentional = false;
+    private boolean isIntentional = false;
 
     Spinner spinner;
 
@@ -22,15 +24,17 @@ public class PaletteActivity extends AppCompatActivity {
 
         Resources res = getResources();
         String[] colors = res.getStringArray(R.array.colors_array);
+
         spinner = findViewById(R.id.spinner);
         spinner.setAdapter(new ColorAdapter(this, colors));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (isIntentional) {
-                    Intent startCanvasActivity = new Intent(PaletteActivity.this, CanvasActivity.class);
-                    startCanvasActivity.putExtra("position", position);
-                    startActivity(startCanvasActivity);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    CanvasFragment canvasFragment = CanvasFragment.newInstance(ColorAdapter.COLORS[position]);
+                    fragmentTransaction.replace(R.id.container, canvasFragment).addToBackStack(null).commit();
                 } else {
                     isIntentional = true;
                 }
@@ -40,4 +44,6 @@ public class PaletteActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) { }
         });
     }
+
+
 }
