@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lab 3</string>
+    <string name="activity_palette_name">Actividad de la paleta</string>
+    <string name="activity_canvas_name">Actividad de lienzo</string>
+    <string-array name="colors_array">
+        <item>blanco</item>
+        <item>rojo</item>
+        <item>azul</item>
+        <item>verde</item>
+        <item>gris</item>
+        <item>cian</item>
+        <item>magenta</item>
+        <item>amarillo</item>
+    </string-array>
+</resources>
