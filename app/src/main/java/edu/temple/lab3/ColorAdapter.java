@@ -41,7 +41,7 @@ public class ColorAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView colorView = new TextView(context);
         colorView.setText(colors[position]);
-        colorView.setTextSize(32);
+        colorView.setTextSize(28);
         colorView.setBackgroundColor(COLORS[position]);
         return colorView;
     }

@@ -29,6 +29,10 @@ public class PaletteActivity extends AppCompatActivity implements PaletteFragmen
     public void onColorPicked(int color) {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         CanvasFragment canvasFragment = CanvasFragment.newInstance(color);
-        fragmentTransaction.replace(R.id.container1, canvasFragment).addToBackStack(null).commit();
+        if (findViewById(R.id.container2) != null) {
+            fragmentTransaction.replace(R.id.container2, canvasFragment).addToBackStack(null).commit();
+        } else {
+            fragmentTransaction.replace(R.id.container1, canvasFragment).addToBackStack(null).commit();
+        }
     }
 }
