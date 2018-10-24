@@ -21,7 +21,7 @@ public class PaletteActivity extends AppCompatActivity implements PaletteFragmen
         String[] colors = res.getStringArray(R.array.colors_array);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         PaletteFragment paletteFragment = PaletteFragment.newInstance(colors);
-        fragmentTransaction.add(R.id.containerPalette, paletteFragment).commit();
+        fragmentTransaction.add(R.id.container1, paletteFragment).commit();
     }
 
 
@@ -29,6 +29,6 @@ public class PaletteActivity extends AppCompatActivity implements PaletteFragmen
     public void onColorPicked(int color) {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         CanvasFragment canvasFragment = CanvasFragment.newInstance(color);
-        fragmentTransaction.replace(R.id.containerCanvas, canvasFragment).addToBackStack(null).commit();
+        fragmentTransaction.replace(R.id.container1, canvasFragment).addToBackStack(null).commit();
     }
 }
